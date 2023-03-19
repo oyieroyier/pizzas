@@ -65,7 +65,7 @@ Create the following relationships:
 Add validations to the `RestaurantPizza` model:
 
 - must have a `price` between 1 and 30
-![](/readme_resources/VAL.png)
+![](/readme_resources/VAL.jpg)
 
 ## ROUTES Deliverables:
 Set up the following routes. Make sure to return JSON data in the format specified along with the appropriate HTTP verb.
