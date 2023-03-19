@@ -31,9 +31,9 @@ You can setup this repository by following this manual
     ```bash
    bundle install
    ```
-3. Perform any pending database migrations
+3. Perform any pending database migrations and seed data
    ```bash
-   rails db:migrate
+   rails db:migrate db:seed
    ```
 4. Make sure no other application is using PORT 3000 and run the application
     ```bash
