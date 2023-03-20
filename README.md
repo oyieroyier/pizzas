@@ -1,9 +1,11 @@
 # SA-01: Phase 4 Code Challenge: Pizzas
 
 ## Learning Goals:
+
 Implement a 'mini' Rails application that implements associations.
 
 ## Requirements
+
 For this project, I am required to:
 
 Create a Rails API backend.
@@ -12,34 +14,48 @@ Have at least three resources (three DB tables).
 ## Setup
 
 ### Pre-Requisites
+
 In order to use this repository you will need the following:
-
-
 
 - Operating System **(Windows `10+`, Linux `3.8+`, or MacOS X `10.7+`)**
 - An account on Postman API Platform. [CLICK HERE TO CREATE ONE](https://www.postman.com/)
 - RAM >= 4GB
 - Free Space >= 2GB
 
-You can setup this repository by following this manual
+**NOTE: The screenshots attached use localhost routes for illustration but the live link below works the same way.**
+
+#### REMOTE SERVER TESTING
+1. Copy the below live link of the of the API:
+
+```
+https://pizza-app-s3a8.onrender.com/
+```
+
+2. Open Postman on your browser and on your workspace, paste the live link where the API server is running.
+
+![](/readme_resources/postman.png)
+
+3. Test the deliverables by appending the routes under **ROUTES Deliverables** to the URL above and making the relevant HTTP requests.
+
+#### LOCAL SERVER TESTING
+You can also set up this repository by following this manual
 
 1. Clone the repository
-    ```bash
+   ```bash
    git clone https://github.com/oyieroyier/pizzas.git
    ```
 2. Ensure the ruby gems are setup in your machine
-    ```bash
+   ```bash
    bundle install
    ```
 3. Perform any pending database migrations and seed data
    ```bash
    rails db:migrate db:seed
    ```
-4. Make sure no other application is using PORT 3000 and run the application
-    ```bash
-    rails s
-    ```
-
+4. Make sure no other application is already running on PORT 3000 and run the application
+   ```bash
+   rails s
+   ```
 5. Open Postman on your browser and on your workspace, paste this link where the API server is running
     ```
    http://localhost:3000
@@ -51,7 +67,9 @@ You can setup this repository by following this manual
 Attached images illustrate the requests.
 
 
+
 ## MODEL Deliverables
+
 Create the following relationships:
 
 - A `Restaurant` has many `Pizza`s through `RestaurantPizza`
@@ -60,17 +78,19 @@ Create the following relationships:
 
 ![](/readme_resources/dbdiag.png)
 
-
 ## VALIDATIONS Deliverables
+
 Add validations to the `RestaurantPizza` model:
 
 - must have a `price` between 1 and 30
-![](/readme_resources/VAL.jpg)
+  ![](/readme_resources/VAL.jpg)
 
 ## ROUTES Deliverables:
+
 Set up the following routes. Make sure to return JSON data in the format specified along with the appropriate HTTP verb.
 
 #### GET /restaurants
+
 Return JSON data in the format below:
 
 ```
@@ -87,9 +107,11 @@ Return JSON data in the format below:
   }
 ]
 ```
+
 ![](/readme_resources/GET.png)
 
 #### GET /restaurants/:id
+
 If the `Restaurant` exists, return JSON data in the format below:
 
 ```
@@ -111,6 +133,7 @@ If the `Restaurant` exists, return JSON data in the format below:
   ]
 }
 ```
+
 ![](/readme_resources/SHOW.png)
 
 If the `Restaurant` does not exist, return the following JSON data, along with
@@ -121,9 +144,11 @@ the appropriate HTTP status code:
   "error": "Restaurant not found"
 }
 ```
+
 ![](/readme_resources/SHOW2.png)
 
 #### DELETE /restaurants/:id
+
 If the `Restaurant` exists, it should be removed from the database, along with any `RestaurantPizza`s that are associated with it.
 
 ![](/readme_resources/DELETE.png)
@@ -136,9 +161,11 @@ the appropriate HTTP status code:
   "error": "Restaurant not found"
 }
 ```
+
 ![](/readme_resources/DELETE2.png)
 
 #### GET /pizzas
+
 Return JSON data in the format below:
 
 ```
@@ -155,9 +182,11 @@ Return JSON data in the format below:
   }
 ]
 ```
+
 ![](/readme_resources/GETPIZZAS.png)
 
 #### POST /restaurant_pizzas
+
 This route should create a new `RestaurantPizza` that is associated with an existing `Pizza` and `Restaurant`. It should accept an object with the following properties in the body of the request:
 
 ```
@@ -178,6 +207,7 @@ related to the `Pizza`:
   "ingredients": "Dough, Tomato Sauce, Cheese"
 }
 ```
+
 ![](/readme_resources/RESPIZZ.png)
 
 If the `RestaurantPizza` is **not** created successfully, return the following
@@ -189,12 +219,13 @@ JSON data, along with the appropriate HTTP status code:
 }
 
 ```
-![](/readme_resources/UNPRO.png)
 
+![](/readme_resources/UNPRO.png)
 
 ## Authors
 
 Project contributed to and maintained by:
+
 - [Bob Oyier](https://github.com/oyieroyier/)
 
 ## ISC
